@@ -3,25 +3,25 @@ $urls = Config::Get("urls");
 $legal = Config::Get('legal');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
     <head>
         <meta charset="utf-8" />
-        <meta name="theme-color" content="#2d3943" />
+        <meta name="theme-color" content="#2ECC71"/>
 
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Play:400,700">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet" />
 
-        <title>API Documentation - mclo.gs</title>
+    <title>API Dokumentace - MC Návody</title>
 
-        <base href="//<?=str_replace("api.", "", $_SERVER['HTTP_HOST']); ?>/" />
+        <base href="//<?= str_replace("api.", "log.", $_SERVER['HTTP_HOST']); ?>/"/>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         <link rel="stylesheet" href="css/btn.css" />
         <link rel="stylesheet" href="css/mclogs.css?v=071224" />
 
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
-        <meta name="description" content="Easily paste your Minecraft logs to share and analyse them.">
+       <meta name="description" content="Snadno vkládejte své záznamy z Minecraftu, sdílejte je a analyzujte.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
         <script>
@@ -38,25 +38,30 @@ $legal = Config::Get('legal');
         </script>
     </head>
     <body>
-        <header class="row navigation">
-            <div class="row-inner">
-                <a href="/" class="logo">
-                    <img src="img/logo.png" />
-                </a>
-                <div class="menu">
-                    <a class="menu-social btn btn-black btn-notext btn-large btn-no-margin" href="https://github.com/aternosorg/mclogs" target="_blank">
-                        <i class="fa fa-github"></i>
-                    </a>
-                </div>
-            </div>
-        </header>
+<header class="row navigation">
+    <div class="row-inner">
+        <a href="/" class="logo">
+            <img src="img/logo.png" alt=""/>
+        </a>
+        <div class="menu">
+            <a class="menu-item" href="https://mcnavody.eu/">
+                <i class="fa-solid fa-book"></i> Wiki
+            </a>
+            <a class="menu-item" href="https://discord.mcnavody.eu/">
+                <i class="fa-brands fa-discord"></i> Discord
+            </a>
+        </div>
+    </div>
+</header>
         <div class="row docs dark">
             <div class="row-inner">
                 <div class="docs-text">
-                    <h1 class="docs-title">API Documentation</h1>
-                    Integrate <strong>mclo.gs</strong> directly into your server panel, your hosting software or anything else. This platform
-                    was built for high performance automation and can easily be integrated into any existing software via our
-                    HTTP API.
+                    <h1 class="docs-title">Dokumentace API</h1>
+            Integrujte <strong>log.mcnavody.eu</strong> přímo do svého serverového panelu, hostingového softwaru nebo
+            čehokoli jiného. Tato platforma
+            byla vytvořena pro vysoce výkonnou automatizaci a lze ji snadno integrovat do jakéhokoli stávajícího
+            softwaru prostřednictvím naší
+            HTTP API.
                 </div>
                 <div class="docs-icon">
                     <i class="fa fa-code"></i>
@@ -72,9 +77,9 @@ $legal = Config::Get('legal');
                 </div>
                 <table class="endpoint-table">
                     <tr>
-                        <th>Field</th>
-                        <th>Type</th>
-                        <th>Description</th>
+                        <th>Pole</th>
+                        <th>Typ</th>
+                        <th>Popis</th>
                     </tr>
                     <tr>
                         <td class="endpoint-field">content</td>
@@ -91,7 +96,7 @@ $legal = Config::Get('legal');
     "url": "<?=$urls['baseUrl']?>/8FlTowW",
     "raw": "<?=$urls['apiBaseUrl']?>/1/raw/8FlTowW"
 }</pre>
-                <h3>Error <span class="content-type">application/json</span></h3>
+                <h3>Chyba <span class="content-type">application/json</span></h3>
                 <pre class="answer">
 {
     "success": false,
@@ -107,9 +112,9 @@ $legal = Config::Get('legal');
                 </div>
                 <table class="endpoint-table">
                     <tr>
-                        <th>Field</th>
-                        <th>Type</th>
-                        <th>Description</th>
+                        <th>Pole</th>
+                        <th>Typ</th>
+                        <th>Popis</th>
                     </tr>
                     <tr>
                         <td class="endpoint-field">[id]</td>
@@ -125,7 +130,7 @@ $legal = Config::Get('legal');
 [18:25:34] [Server thread/INFO]: Default game type: SURVIVAL
 ...
 </pre>
-                <h3>Error <span class="content-type">application/json</span></h3>
+                <h3>Chyba <span class="content-type">application/json</span></h3>
                 <pre class="answer">
 {
     "success": false,
@@ -142,9 +147,9 @@ $legal = Config::Get('legal');
                 </div>
                 <table class="endpoint-table">
                     <tr>
-                        <th>Field</th>
-                        <th>Type</th>
-                        <th>Description</th>
+                        <th>Pole</th>
+                        <th>Typ</th>
+                        <th>Popis</th>
                     </tr>
                     <tr>
                         <td class="endpoint-field">[id]</td>
@@ -205,7 +210,7 @@ $legal = Config::Get('legal');
     ]
   }
 }</pre>
-                <h3>Error <span class="content-type">application/json</span></h3>
+                <h3>Chyba <span class="content-type">application/json</span></h3>
                 <pre class="answer">
 {
     "success": false,
@@ -216,27 +221,25 @@ $legal = Config::Get('legal');
         <div class="row dark api-notes docs">
             <div class="row-inner">
                 <div class="docs-text">
-                    <h2>Notes</h2>
-                    The API has currently a rate limit of 60 requests per minute per IP address. This is set to ensure the
-                    operability of this service. If you have any use case that requires a higher limit, feel free to contact us.
-                    <div class="notes-buttons">
-                        <a class="btn btn-small btn-no-margin btn-blue" href="mailto:matthias@aternos.org">
-                            <i class="fa fa-envelope"></i> Contact via mail
-                        </a>
-                        <a class="btn btn-small btn-no-margin btn-blue" target="_blank" href="https://twitter.com/Aternos">
-                            <i class="fa fa-twitter"></i> Contact via Twitter
-                        </a>
-                    </div>
+                <h2>Poznámky</h2>
+            Rozhraní API má v současné době limit rychlosti 60 požadavků za minutu na jednu IP adresu. Tento limit je
+            nastaven tak, aby bylo zajištěno, že provozuschopnost této služby. Pokud máte nějaký případ použití, který
+            vyžaduje vyšší limit, neváhejte nás kontaktovat.
+            <div class="notes-buttons">
+                <a class="btn btn-small btn-no-margin btn-blue" href="https://discord.mcnavody.eu">
+                    <i class="fa fa-envelope"></i> Kontaktujte nás
+                </a>
+            </div>
                 </div>
                 <div class="docs-icon">
                     <i class="fa fa-sticky-note"></i>
                 </div>
             </div>
         </div>
-        <div class="row footer">
-            <div class="row-inner">
-                &copy; 2017-<?=date("Y"); ?> by mclo.gs - a service by <a href="https://aternos.org">Aternos</a> | <a href="<?=$legal['imprint']?>">Imprint</a>
-            </div>
-        </div>
+<div class="row footer">
+    <div class="row-inner">
+        MC Návody <?= date("Y"); ?>
+    </div>
+</div>
     </body>
 </html>

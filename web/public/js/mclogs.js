@@ -1,4 +1,4 @@
-const titles = ["Paste", "Share", "Analyse"];
+var titles = ["Vlož", "Sdílej", "Analyzuj"];
 let currentTitle = 0;
 let speed = 30;
 let pause = 3000;

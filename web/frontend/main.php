@@ -3,12 +3,12 @@ $urls = Config::Get('urls');
 $legal = Config::Get('legal');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
     <head>
         <meta charset="utf-8" />
-        <meta name="theme-color" content="#2d3943" />
+        <meta name="theme-color" content="#2ECC71" />
 
-        <title>mclo.gs - Paste, share & analyse your Minecraft logs</title>
+        <title>MC Návody</title>
 
         <base href="/" />
 
@@ -19,7 +19,7 @@ $legal = Config::Get('legal');
 
         <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
-        <meta name="description" content="Easily paste your Minecraft logs to share and analyse them.">
+        <meta name="description" content="Snadno vkládejte své logy z Minecraftu, sdílejte je a analyzujte.">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
         <script>
@@ -42,20 +42,11 @@ $legal = Config::Get('legal');
                     <img src="img/logo.png" />
                 </a>
                 <div class="menu">
-                    <a class="menu-item" href="/#info">
-                        <i class="fa fa-info-circle"></i> Info
+                    <a class="menu-item" href="https://mcnavody.eu/">
+                        <i class="fa fa-book"></i> Wiki
                     </a>
-                    <a class="menu-item" href="/#plugin">
-                        <i class="fa fa-database"></i> Plugin
-                    </a>
-                    <a class="menu-item" href="/#mod">
-                        <i class="fa fa-puzzle-piece"></i> Mod
-                    </a>
-                    <a class="menu-item" href="/#api">
-                        <i class="fa fa-code"></i> API
-                    </a>
-                    <a class="menu-social btn btn-black btn-notext btn-large btn-no-margin" href="https://github.com/aternosorg/mclogs" target="_blank">
-                        <i class="fab fa-github"></i>
+                    <a class="menu-item" href="https://discord.mcnavody.eu/">
+                        <i class="fab fa-discord"></i> Discord
                     </a>
                 </div>
             </div>
@@ -63,7 +54,7 @@ $legal = Config::Get('legal');
         <div class="row dark title">
             <div class="row-inner">
                 <h1 class="title-container">
-                    <span class="title-verb">Paste</span> your Minecraft logs.
+                    <span class="title-verb">Vlož</span> svůj log z Minecraftu.
                 </h1>
             </div>
         </div>
@@ -72,10 +63,10 @@ $legal = Config::Get('legal');
                 <div class="paste-box">
                     <div class="paste-header">
                         <div class="paste-header-text">
-                            Paste your log here or <span class="btn btn-small btn-no-margin" id="paste-select-file"><i class="fa fa-file-import"></i> Select a file</span>
+                            Zde vložte log nebo <span class="btn btn-small btn-no-margin" id="paste-select-file"><i class="fa fa-file-import"></i> Zvolte soubor</span>
                         </div>
                         <div class="paste-save btn btn-green btn-no-margin">
-                            <i class="fa fa-save"></i> Save
+                            <i class="fa fa-save"></i> Uložit
                         </div>
                     </div>
                     <div id="dropzone" class="paste-body">
@@ -83,50 +74,7 @@ $legal = Config::Get('legal');
                     </div>
                     <div class="paste-footer">
                         <div class="paste-save btn btn-green btn-no-margin">
-                            <i class="fa fa-save"></i> Save
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row info" id="info">
-            <div class="row-inner">
-                <div class="info-item info-blue">
-                    <div class="info-icon">
-                        <i class="fa fa-clone"></i>
-                    </div>
-                    <div class="info-details">
-                        <div class="info-title">
-                            Paste
-                        </div>
-                        <div class="info-text">
-                            Easily paste your Minecraft log file here from any source. Critical information e.g. IP addresses are automatically hidden.
-                        </div>
-                    </div>
-                </div>
-                <div class="info-item info-green">
-                    <div class="info-icon">
-                        <i class="fa fa-share-alt"></i>
-                    </div>
-                    <div class="info-details">
-                        <div class="info-title">
-                            Share
-                        </div>
-                        <div class="info-text">
-                            Use your personal short URL to share your Minecraft log with others and find solutions together.
-                        </div>
-                    </div>
-                </div>
-                <div class="info-item info-red">
-                    <div class="info-icon">
-                        <i class="fa fa-search"></i>
-                    </div>
-                    <div class="info-details">
-                        <div class="info-title">
-                            Analyse
-                        </div>
-                        <div class="info-text">
-                            Find problems in your Minecraft log through intelligent syntax highlighting and analysis.
+                            <i class="fa fa-save"></i> Uložit
                         </div>
                     </div>
                 </div>
@@ -136,100 +84,28 @@ $legal = Config::Get('legal');
             <div class="row-inner">
                 <div class="article left">
                     <div class="article-icon">
-                        <i class="fa fa-database"></i>
-                    </div>
-                    <div class="article-info">
-                        <div class="article-title">
-                            Use our plugin.
-                        </div>
-                        <div class="article-text">
-                            With our plugin you can share your Minecraft log directly from your server with one simple command.
-                            Use permissions to share the power with other team members and solve problems together. It's even possible
-                            to export old server log files, e.g. after a crash. Critical information like IP addresses are automatically
-                            hidden to ensure safety and privacy.
-                        </div>
-                        <div class="article-buttons">
-                            <a href="https://modrinth.com/plugin/mclogs" target="_blank" class="btn btn-blue btn-no-margin">
-                                <i class="fa fa-download"></i> modrinth.com
-                            </a>
-                            <a href="https://hangar.papermc.io/Aternos/mclogs" target="_blank" class="btn btn-blue btn-no-margin">
-                                <i class="fa fa-download"></i> hangar.papermc.io
-                            </a>
-                            <a href="https://dev.bukkit.org/projects/mclogs" target="_blank" class="btn btn-blue btn-no-margin">
-                                <i class="fa fa-download"></i> dev.bukkit.org
-                            </a>
-                            <a href="https://www.spigotmc.org/resources/mclo-gs.47502/" target="_blank" class="btn btn-blue btn-no-margin">
-                                <i class="fa fa-download"></i> spigotmc.org
-                            </a>
-                            <a href="https://github.com/aternosorg/mclogs-bukkit" target="_blank" class="btn btn-blue btn-no-margin">
-                                <i class="fab fa-github"></i> github.com
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mod" id="mod">
-            <div class="row-inner">
-                <div class="article right">
-                    <div class="article-icon">
-                        <i class="fa fa-puzzle-piece"></i>
-                    </div>
-                    <div class="article-info">
-                        <div class="article-title">
-                            Use our mod.
-                        </div>
-                        <div class="article-text">
-                            We also have a mod for Forge and Fabric, so you can use it with your favorite mods. It is fully server-sided
-                            and has the same features as the plugin.
-                        </div>
-                        <div class="article-buttons">
-                            <a href="https://modrinth.com/mod/mclogs" target="_blank" class="btn btn-blue btn-no-margin">
-                                <i class="fa fa-download"></i> modrinth.com
-                            </a>
-                            <a href="https://www.curseforge.com/minecraft/mc-mods/mclo-gs" target="_blank" class="btn btn-blue btn-no-margin">
-                                <i class="fa fa-download"></i> curseforge.com
-                            </a>
-                            <a href="https://github.com/aternosorg/mclogs-forge" target="_blank" class="btn btn-blue btn-no-margin">
-                                <i class="fab fa-github"></i> Forge
-                            </a>
-                            <a href="https://github.com/aternosorg/mclogs-fabric" target="_blank" class="btn btn-blue btn-no-margin">
-                                <i class="fab fa-github"></i> Fabric
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row dark api" id="api">
-            <div class="row-inner">
-                <div class="article left">
-                    <div class="article-icon">
                         <i class="fa fa-code"></i>
                     </div>
                     <div class="article-info">
                         <div class="article-title">
-                            Use our API.
+                            Použij náš plugin.
                         </div>
                         <div class="article-text">
-                            Integrate <strong>mclo.gs</strong> directly into your server panel, your hosting software or anything else. This platform
-                            was built for high performance automation and can easily be integrated into any existing software via our
-                            HTTP API.
+                            Pomocí našeho pluginu můžete sdílet log Minecraftu přímo ze serveru pomocí jednoho jednoduchého příkazu.
+                            Soukromé informace, jako jsou IP adresy, jsou automaticky skryty, aby byla zajištěna bezpečnost a soukromí.
                         </div>
                         <div class="article-buttons">
-                            <a href="<?=$urls['apiBaseUrl']?>" class="btn btn-blue btn-no-margin">
-                                <i class="fa fa-book"></i> API Documentation
+                            <a href="https://github.com/Fejby/MCNavody-plugin/releases" target="_blank" class="btn btn-blue btn-no-margin">
+                                <i class="fa fa-download"></i> Github
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row footer">
+                <div class="row footer">
             <div class="row-inner">
-                &copy; 2017-<?=date("Y"); ?> by mclo.gs - a service by <a target="_blank" href="https://aternos.org">Aternos</a> |
-                <a target="_blank" href="<?=$legal['imprint']?>">Imprint</a> |
-                <a target="_blank" href="<?=$legal['privacy']?>>">Privacy</a>
+                MC Návody <?=date("Y"); ?>
             </div>
         </div>
         <script src="js/mclogs.js?v=130221"></script>
